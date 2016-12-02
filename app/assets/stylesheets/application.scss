@@ -1,6 +1,7 @@
 /* inport "bootstrap-sprockets" before "bootstrap" and "bootstrap/variables" */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "toastr";
 
 .avatar-small {
 	width: 20px;
