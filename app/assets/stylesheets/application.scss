@@ -1,3 +1,19 @@
 /* inport "bootstrap-sprockets" before "bootstrap" and "bootstrap/variables" */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.avatar-small {
+	width: 20px;
+}
+
+.avatar-medium {
+	width: 38px;
+}
+
+.avatar-large {
+	width: 70px;
+}
+
+.avatar-full {
+	width: 100px;
+}
