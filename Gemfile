@@ -27,6 +27,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 # Add notifications eg when user signs up
 gem 'toastr-rails'
+# Sending transactional emails with sendgrid
+gem 'sendgrid-rails', '~> 2.0', '>= 2.0.5'
+# Add social Authentication
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

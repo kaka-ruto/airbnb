@@ -40,4 +40,14 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Transactional emails here
+  # config.action_mailer.smtp_settings = {
+  #   address: 'smtp.sendgrid.net',
+  #   port: 587,
+  #   enable_starttls_auto: true,
+  #   user_name: 'borenho',
+  #   password: 'Co9883350/*+',
+  #   authentication: 'plain'
+  #}
 end

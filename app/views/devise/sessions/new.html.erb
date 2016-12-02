@@ -1,10 +1,12 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3 text-centre">
     
+    <%= link_to "Sign In with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary" %>
+
     <h2>Log in</h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= render 'shared/devisemessages' %>
+        <%= render 'shared/devisemessages' %>
 
         <div class="form-group">
           <%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "Email" %>
