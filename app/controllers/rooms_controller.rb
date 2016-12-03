@@ -7,7 +7,6 @@ class RoomsController < ApplicationController
   end
 
   def show
-    
   end
 
   def new
@@ -41,4 +40,5 @@ class RoomsController < ApplicationController
 
     def room_params
       params.require(:room).permit(:home_type, :room_type, :accomodate, :bed_room, :bath_room, :listing_name, :summary, :address, :is_tv, :is_kitchen, :is_air, :is_heating, :is_internet, :price, :active)
+    end
 end
