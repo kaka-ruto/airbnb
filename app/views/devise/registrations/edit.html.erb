@@ -32,7 +32,7 @@
             </div>
 
             <div class="form-group">
-              <%= f.text_area :description, rows: 5, cols: 25, :class => "form-control", :placeholder => "Description" %>
+              <%= f.text_field :description, rows: 5, cols: 25, :class => "form-control", :placeholder => "Description" %>
             </div>
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>  <!-- email confirmed? -->
@@ -49,10 +49,6 @@
 
             <div class="form-group">
               <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "Confirm Password" %>
-            </div>
-
-            <div class="form-group">
-              <%= f.password_field :current_password, autocomplete: "off", :class => "form-control", :placeholder => "Type current password to confirm changes" %>
             </div>
 
             <div class="actions">
