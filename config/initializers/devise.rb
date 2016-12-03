@@ -274,4 +274,6 @@ Devise.setup do |config|
 
   # Facebook social auth
   config.omniauth :facebook, '1802794446642651', '5bfa1caffa9b448d1073684d1982330d', scope: 'email', info_fields: 'email, name'
+  # Facebook social auth
+  config.omniauth :google_oauth2, '184686768576-rp9q8cseav564gpuajfdr4ish33r3ss6.apps.googleusercontent.com', '9unwT1Umj7j5np9Vam8qpbXO', scope: 'email', info_fields: 'email, name'
 end

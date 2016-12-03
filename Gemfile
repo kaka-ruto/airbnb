@@ -32,6 +32,7 @@ gem 'sendgrid-rails', '~> 2.0', '>= 2.0.5'
 # Add social Authentication
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

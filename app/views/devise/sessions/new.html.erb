@@ -3,6 +3,8 @@
     
     <%= link_to "Sign In with Facebook", user_facebook_omniauth_authorize_path, class: "btn btn-primary" %>
 
+    <%= link_to "Sign In with Google", user_google_oauth2_omniauth_authorize_path, class: "btn btn-primary" %>
+
     <h2>Log in</h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
