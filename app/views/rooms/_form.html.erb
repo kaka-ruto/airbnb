@@ -69,7 +69,51 @@
 						<%= f.text_field :address, placeholder: "What is your address?", class: "form-control" %>
 					</div>
 				</div>
-				
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<%= f.check_box :is_tv %> TV
+						</div>
+						<div class="form-group">
+							<%= f.check_box :is_kitchen %> Kitchen
+						</div>
+						<div class="form-group">
+							<%= f.check_box :is_internet %> Internet
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<%= f.check_box :is_heating %> Heating
+						</div>
+						<div class="form-group">
+							<%= f.check_box :is_air %> Air Conditioning
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label>Nightly Prices</label>
+							<div class="input-group">
+								<div class="input-group-addon">$</div>
+								<%= f.text_field :price, placeholder: "eg. $100", class: "form-control" %>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group">
+						<%= f.check_box :active %> Active
+					</div>
+				</div>
+
+				<div class="actions">
+					<%= f.submit "Save", class: "btn btn-primary" %>
+				</div>
+
 			<% end %>
 		</div>
 	</div>
