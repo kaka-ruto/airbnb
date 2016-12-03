@@ -133,3 +133,54 @@ body {
 	font-weight: bold;
 	text-decoration: none;
 }
+
+label {
+	color: #565a5c;
+	font-size: 1.1em;
+	font-weight: 500px;
+	margin-bottom: 10px;
+}
+
+select {
+	color: #565a5c;
+	background-color: #fff;
+	width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	padding: 10px;
+	appearance: none;  /* appearnace makes our websites appear diff in other OSes and browsers */
+	-moz-appearance: none;  /* eg it will automatically place the down arrow -v, at the right of the select button */
+	-webkit-appearance: none;
+}
+
+.select:before {
+	content: '\25bc';  /* the down arrow - v */
+	font-size: 1.2em;
+	position: absolute;
+	color: #82888A;
+	top: 40px;
+	right: 30px;
+	transform: scale(0.84, 0.42); /* (x dir, y dir) */
+}
+
+input[type="checkbox"] {  //this will make our checkboxes bigger
+	height: 1.25em;
+	width: 1.25em;
+	margin-bottom: -0.25em;
+	margin-right: 5px;
+	vertical-align: top;
+	border: 1px solid #c4c4c4;
+	border-radius: 2px;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+input[type="checkbox"]:checked:before {  //Make checkboxes tickable with a special tick
+	content: '\2713';  
+	font-size: 1em;
+	position: absolute;
+	text-align: center;
+	width: 1.25em;
+	color: #ff5a5f;
+}
