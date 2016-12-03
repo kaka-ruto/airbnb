@@ -27,6 +27,49 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="row">
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Bedrooms</label>
+							<%= f.select :bed_room, [ ['1', 1], ['2', 2], ['3', 3], ['4+', 4] ], prompt: 'Select...', class: 'form-control' %>
+						</div>
+					</div>
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Bathrooms</label>
+							<%= f.select :bath_room, [ ['1', 1], ['2', 2], ['3', 3], ['4+', 4] ], id: 'bath_room', prompt: 'Select...', class: 'form-control' %>
+						</div>
+					</div>
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Accomodate</label>
+							<%= f.select :accomodate, [ ['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6+', 6] ], id: 'accomodate', prompt: 'Select...', class: 'form-control' %>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group">
+						<label>Listing name</label>
+						<%= f.text_field :listing_name, placeholder: "Be clear and descriptive", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group">
+						<label>Summary</label>
+						<%= f.text_area :summary, rows: 5, placeholder: "Tell us about your house", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group">
+						<label>Address</label>
+						<%= f.text_field :address, placeholder: "What is your address?", class: "form-control" %>
+					</div>
+				</div>
+				
 			<% end %>
 		</div>
 	</div>
