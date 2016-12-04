@@ -33,6 +33,8 @@ gem 'sendgrid-rails', '~> 2.0', '>= 2.0.5'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+# For photo processing and uploads
+gem 'paperclip'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
