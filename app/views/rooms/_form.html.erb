@@ -5,7 +5,7 @@
 	<div class="panel-body">
 		<div class="container">
 			
-			<%= form_for @room do |f| %>
+			<%= form_for @room, html: {multipart: true} do |f| %>
 
 				<div class="row">
 					<div class="col-md-4 select">
@@ -39,12 +39,6 @@
 						<div class="form-group">
 							<label>Bathrooms</label>
 							<%= f.select :bath_room, [ ['1', 1], ['2', 2], ['3', 3], ['4+', 4] ], id: 'bath_room', prompt: 'Select...', class: 'form-control' %>
-						</div>
-					</div>
-					<div class="col-md-4 select">
-						<div class="form-group">
-							<label>Accomodate</label>
-							<%= f.select :accomodate, [ ['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6+', 6] ], id: 'accomodate', prompt: 'Select...', class: 'form-control' %>
 						</div>
 					</div>
 				</div>
@@ -103,6 +97,19 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<span class="btn btn-default btn-file">
+								<i class="fa fa-cloud-upload fa-lg"></i> Upload Photos
+								<%= file_field_tag "images[]", type: :file, multiple: true %>
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div id="photos"><%= render 'photos/list' %></div>
 
 				<div class="row">
 					<div class="form-group">

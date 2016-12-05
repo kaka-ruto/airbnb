@@ -35,6 +35,7 @@ class RoomsController < ApplicationController
       @photos = @room.photos
     else
       redirect_to root_path, notice: "You don't have permission to edit"
+    end
   end
 
   def update
