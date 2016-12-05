@@ -4,7 +4,7 @@
 		<% @photos.each do |photo| %>		
 			<div class="col-md-4">
 				<div class="panel panel-default">
-				  <div class="panel-heading preview">
+				  <div class="panel-heading img preview">
 				  	<%= image_tag photo.image.url() %>
 				  </div>
 				  <div class="panel-body">
@@ -16,7 +16,7 @@
 				  </div>
 				</div>
 			</div>
-		<% end %>			
+		<% end %>	
 	</div>
 
 <% end %>

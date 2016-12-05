@@ -213,3 +213,16 @@ input[type="checkbox"]:checked:before {  //Make checkboxes tickable with a speci
 .panel-heading.preview img {
 	width: 100%;
 }
+
+img {
+	width: 100%;
+}
+
+.amenities li {
+	margin-bottom: 10px;
+	list-style-type: none;
+}
+
+.text-line-through {
+	text-decoration: line-through;
+}
