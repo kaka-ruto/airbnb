@@ -3,7 +3,7 @@
 one:
   home_type: MyString
   room_type: MyString
-  accomodate: 1
+  accommodate: 1
   bed_room: 1
   bath_room: 1
   listing_name: MyString
@@ -21,7 +21,7 @@ one:
 two:
   home_type: MyString
   room_type: MyString
-  accomodate: 1
+  accommodate: 1
   bed_room: 1
   bath_room: 1
   listing_name: MyString

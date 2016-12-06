@@ -43,7 +43,7 @@
 								<%= @room.home_type %>
 							</div>
 							<div class="col-sm-3">
-								<%= @room.accomodate %> <%= @room.accomodate > 1? "Guests" : "Guest" %>
+								<%= @room.accommodate %> <%= @room.accommodate > 1? "Guests" : "Guest" %>
 							</div>
 							<div class="col-sm-3">
 								<%= @room.bed_room %> <%= @room.bed_room > 1? "Bedrooms" : "Bedroom" %>
@@ -134,18 +134,21 @@
 		<!-- Google Maps -->
 		<div class="row">
 			<div class="col-md-12">
+
+				<div id="map"></div>
+
 				<style>
 			       #map {
 			        height: 400px;
 			        width: 100%;
 			       }
 			    </style>
-				<div id="map"></div>
+
 				<script>
 			      function initMap() {
 			        var location = {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>};
 			        var map = new google.maps.Map(document.getElementById('map'), {
-			          zoom: 14,
+			          zoom: 16,
 			          center: location
 			        });
 
@@ -156,10 +159,32 @@
 			        });
 			      }
 			    </script>
+
 			    <script async defer
 			    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4f9JyoEG8M8oMaw7PmisFhRZn0KUUy5I&callback=initMap">
 			    </script>
+			    
 			</div>
+		</div>
+
+		<!-- Nearby Rooms  // make sure nearby rooms exist first before this // -->
+		<h3>Near by</h3>
+		<div class="row">
+			<% for room in @room.nearbys(10) %>
+				
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading preview">
+							<%= image_tag room.photos[0].image.url(:medium) %>
+						</div>
+						<div class="panel-body">
+							<%= link_to room.listing_name, room %><br>
+							(<%= room.distance.round(2) %> miles away)
+						</div>
+					</div>
+				</div>
+
+			<% end %>
 		</div>
 	</div>
 </div>
