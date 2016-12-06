@@ -37,6 +37,8 @@ gem 'omniauth-google-oauth2'
 gem 'paperclip'
 # To get the map based on the given address
 gem 'geocoder'
+# jQuery datepicker
+gem 'jquery-ui-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

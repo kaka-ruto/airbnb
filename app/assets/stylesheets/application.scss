@@ -226,3 +226,13 @@ img {
 .text-line-through {
 	text-decoration: line-through;
 }
+
+.reservation-table td {
+	width: 100%;
+	border: 1px solid #dce0c0;
+	padding: 10px;
+}
+
+.fit {
+	overflow: hidden;
+}
