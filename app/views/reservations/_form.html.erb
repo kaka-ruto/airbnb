@@ -1,6 +1,13 @@
 <%= form_for([@room, @room.reservations.new]) do |f| %>
 
 	<div class="row">
+		<div class="col-md-12 price_tag">
+			<span>$<%= @room.price %></span>
+			<span class="pull-right">Per Night</span>
+		</div>
+	</div>
+
+	<div class="row">
 		<div class="col-md-6">
 			<label>Check In</label>
 			<%= f.text_field :start_date, readonly: 'true', placeholder: "Start Date", class: "form-control" %>
@@ -91,6 +98,7 @@
 									$('#btn_book').attr('disabled', true);
 								} 
 								else {
+									$('#message').hide();
 									$('#preview').show();
 									$('#btn_book').attr('disabled', false);
 
