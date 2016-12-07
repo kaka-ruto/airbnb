@@ -25,7 +25,7 @@
 				</tr>
 				<tr>
 					<td>Total</td>
-					<td><span id="reservation_sum"></span></td>
+					<td>$<span id="reservation_sum"></span></td>
 				</tr>
 			</tbody>
 		</table>
@@ -70,6 +70,37 @@
 					onSelect: function(selected) {
 						$('#reservation_end_date').datepicker("option", "minDate", selected);
 						$('#reservation_end_date').attr("disabled", false);
+
+						var start_date = $(this).datepicker('getDate');
+						var end_date = $(reservation_end_date).datepicker('getDate');
+						var days = (end_date - start_date)/1000/60/60/24 + 1
+
+						var input = {
+							'start_date': start_date,
+							'end_date': end_date,
+							'room_id': <%= @room.id %>
+						}
+						$.ajax ({
+							url: "/preview",
+							data: input,
+
+							success: function(data) {
+								if (data.conflict) {
+									$('#message').text("This date range is unavailable");
+									$('#preview').hide();
+									$('#btn_book').attr('disabled', true);
+								} 
+								else {
+									$('#preview').show();
+									$('#btn_book').attr('disabled', false);
+
+									var total = days * <%= @room.price %>
+									$('#reservation_days').text(days);
+									$('#reservation_sum').text(total);
+									$('#reservation_total').val(total);
+								}
+							}
+						});
 					} 
 				});
 				$('#reservation_end_date').datepicker({
@@ -83,6 +114,7 @@
 
 						var start_date = $('#reservation_start_date').datepicker('getDate');
 						var end_date = $(this).datepicker('getDate');
+						var days = (end_date - start_date)/1000/60/60/24 + 1
 
 						var input = {
 							'start_date': start_date,
@@ -95,13 +127,18 @@
 
 							success: function(data) {
 								if (data.conflict) {
-									$('#message').text("This date range is booked");
+									$('#message').text("This date range is unavailable");
 									$('#preview').hide();
 									$('#btn_book').attr('disabled', true);
-								} else {
-									$('#message').text("This date range is OK");
+								} 
+								else {
 									$('#preview').show();
 									$('#btn_book').attr('disabled', false);
+
+									var total = days * <%= @room.price %>
+									$('#reservation_days').text(days);
+									$('#reservation_sum').text(total);
+									$('#reservation_total').val(total);
 								}
 							}
 						});
