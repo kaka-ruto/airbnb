@@ -31,7 +31,7 @@ class ReservationsController < ApplicationController
 		@trips = current_user.reservations
 	end
 
-	def reservations
+	def your_reservations
 		@rooms = current_user.rooms
 	end
 

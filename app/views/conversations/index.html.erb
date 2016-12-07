@@ -10,7 +10,7 @@
 
 						<%= link_to conversation_messages_path(conversation) do %>
 
-							<div class="row">
+							<div class="row conversation">
 								<div class="col-md-2">
 									<%= image_tag avatar_url(other), class: "img-circle avatar-medium" %>
 								</div>
@@ -28,13 +28,5 @@
 				</div>
 			</div>
 		</div>
-
-		<h3>All Users</h3>
-		<% @users.each do |user| %>
-			<% if user != current_user %>
-				<%= user.fullname %>
-				<%= link_to "Send Message", conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post' %>
-			<% end %>
-		<% end %>
 	</div>
 </div>

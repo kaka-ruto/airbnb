@@ -33,10 +33,14 @@
             <% end %>
 
             <li>
-              <a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> Messages </a>
+              <%= link_to conversations_path do %>
+                <i class="fa fa-envelope-o" aria-hidden="true"></i> Messages
+              <% end %>
             </li>
             <li>
-              <a href="#"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Become a host </a>
+              <%= link_to new_room_path do %>
+                <i class="fa fa-home fa-lg" aria-hidden="true"></i> Become a host
+              <% end %>
             </li>
             
           </ul>
