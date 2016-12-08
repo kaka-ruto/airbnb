@@ -30,6 +30,9 @@ Rails.application.routes.draw do
              get '/your_trips' => 'reservations#your_trips'
              get '/your_reservations' => 'reservations#your_reservations'
 
+             post '/notify' => 'reservations#notify'
+             post '/your_trips' => 'reservations#your_trips'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
