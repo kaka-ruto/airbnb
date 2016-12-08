@@ -39,6 +39,9 @@ gem 'paperclip'
 gem 'geocoder'
 # jQuery datepicker
 gem 'jquery-ui-rails'
+# real time messaging 
+gem 'private_pub'
+gem 'thin'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -13,9 +13,9 @@
 			<div class="panel-body">
 				<div class="container">
 					
-					<%= form_for [@conversation, @conversation.messages.new] do |f| %>
+					<%= form_for [@conversation, @conversation.messages.new], remote: true do |f| %>
 						<div class="form-group">
-							<%= f.text_area :content, id: "new-message", placeholder: "Add a personal message", class: "form-control" %>
+							<%= f.text_area :content, placeholder: "Add a personal message", class: "form-control" %>
 						</div>
 						<%= f.hidden_field :user_id, value: current_user.id %>
 
@@ -29,8 +29,10 @@
 		</div>
 
 		<div id="chat">
-			<%= render 'messages' %>
+			<%= render @messages, locals: {conversation: @conversation} %>
 		</div>
 
 	</div>
 </div>
+
+<%= subscribe_to conversation_messages_path(@conversation) %>
