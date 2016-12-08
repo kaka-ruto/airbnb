@@ -4,7 +4,7 @@
 		<!-- Image -->
 		<div class="row">
 			<div class="col-md-12">
-				<%= image_tag @photos[0].image.url(), class: "image-responsive" if @photos.length > 0 %>
+				<%= image_tag @photos[0].image.url(), class: "img-responsive" if @photos.length > 0 %>
 			</div>
 		</div>
 
@@ -139,7 +139,7 @@
 		<!-- Room Reviews -->
 		<div class="row">
 			<div class="col-md-12">
-				<h3>Reviews <%= @room.average_rating %> (<%= @reviews.count %>) </h3>
+				<h3>Reviews <span id="average_rating"></span> (<%= @reviews.count %>) </h3>
 				<div class="container">
 					<div>
 						<%= render 'reviews/form' if @booked && !@hasReview %>
@@ -208,3 +208,11 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	$('#average_rating').raty({
+		path: '/assets',
+		readOnly: 'true',
+		score: <%= @room.average_rating %>
+	});
+</script>
