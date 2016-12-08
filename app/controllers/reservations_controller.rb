@@ -61,7 +61,7 @@ class ReservationsController < ApplicationController
 
 	protect_from_forgery except: [:your_trips]
 	def your_trips
-		@trips = current_user.reservations
+		@trips = current_user.reservations.where("status = ?", true)
 	end
 
 	def your_reservations
