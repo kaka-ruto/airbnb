@@ -42,6 +42,8 @@ gem 'jquery-ui-rails'
 # real time messaging 
 gem 'private_pub'
 gem 'thin'
+# Ransack for advanced object-based and filterable searching
+gem 'ransack'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -29,6 +29,8 @@
 					</div>
 				</div>
 
+				<hr>
+
 				<div class="row">
 					<div class="col-md-4">
 						<%= check_box_tag "q[room_type_eq_any[]]", "Entire" %> Entire Room
@@ -40,6 +42,8 @@
 						<%= check_box_tag "q[room_type_eq_any[]]", "Shared" %> Shared Room
 					</div>
 				</div>
+
+				<hr>
 
 				<div class="row">
 					<div class="col-md-4">
@@ -64,6 +68,8 @@
 					</div>
 				</div>
 
+				<hr>
+
 				<div class="row">
 					<div class="col-md-4">
 						<%= check_box_tag "q[is_tv_eq]", true %> TV
@@ -82,11 +88,31 @@
 					</div>
 				</div>
 
+				<br>
+
 				<div class="row">
 					<%= f.submit "Search", class: "btn btn-primary" %>
 				</div>
 
 			<% end %>
+
+			<hr>
+
+			<div class="row">
+				<% @arrRooms.each do |room| %>
+					<div class="col-md-4">
+						<div class="panel panel-default">
+							<div class="panel-heading preview">
+								<%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
+							</div>
+							<div class="panel-body">
+								<%= link_to room.listing_name, room %>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			</div>
+
 		</div>
 		
 	</div>
