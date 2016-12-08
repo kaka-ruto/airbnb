@@ -43,6 +43,7 @@ class ReservationsController < ApplicationController
 		end
 	end
 
+	protect_from_forgery except: [:notify]
 	def notify
 		params.permit!
 		status = params[:payment_status]
@@ -58,6 +59,7 @@ class ReservationsController < ApplicationController
 		render nothing: true
 	end
 
+	protect_from_forgery except: [:your_trips]
 	def your_trips
 		@trips = current_user.reservations
 	end
