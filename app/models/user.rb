@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   has_many :rooms
   has_many :reservations
+  has_many :reviews
 
   def self.from_omniauth(auth)
   	user = User.where(email: auth.info.email).first
